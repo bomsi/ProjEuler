@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjEuler", "ProjEuler\ProjEuler.csproj", "{F04647ED-9120-45E0-8F27-FB69EA809B88}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjEulerTest", "ProjEulerTest\ProjEulerTest.csproj", "{37EC5C10-0864-4E1E-82D6-BFB5D588F86A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F04647ED-9120-45E0-8F27-FB69EA809B88} = {F04647ED-9120-45E0-8F27-FB69EA809B88}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F04647ED-9120-45E0-8F27-FB69EA809B88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F04647ED-9120-45E0-8F27-FB69EA809B88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F04647ED-9120-45E0-8F27-FB69EA809B88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F04647ED-9120-45E0-8F27-FB69EA809B88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37EC5C10-0864-4E1E-82D6-BFB5D588F86A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37EC5C10-0864-4E1E-82D6-BFB5D588F86A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37EC5C10-0864-4E1E-82D6-BFB5D588F86A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37EC5C10-0864-4E1E-82D6-BFB5D588F86A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

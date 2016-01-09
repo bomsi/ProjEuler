@@ -16,5 +16,31 @@ namespace ProjEuler
                     sum += i;
             return sum;
         }
+
+        public static int Problem002(int limit)
+        {
+            // prepare fibonacci sequence
+            const int estimatedSize = 40;
+            var fibonacci = new int[estimatedSize];
+            int i, j;
+            fibonacci[0] = 1;
+            fibonacci[1] = 2;
+            for (i = 0, j = 2; j < estimatedSize; ++i, ++j)
+            {
+                fibonacci[j] = fibonacci[i] + fibonacci[i+1];
+                if (fibonacci[j] > limit)
+                    break;
+            }
+            if (j >= estimatedSize && fibonacci[estimatedSize - 1] < limit)
+                throw new Exception("Wrong buffer estimate. Buffer to small.");
+            // find sum of even elements
+            int sum = 0;
+            for (i = j - 1; i > 0; --i)
+            {
+                if (!((fibonacci[i] & 1) == 1))
+                    sum += fibonacci[i];
+            }
+            return sum;
+        }
     }
 }

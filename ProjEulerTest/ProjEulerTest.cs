@@ -1,5 +1,4 @@
 ﻿using System;
-using ProjEuler;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace ProjEulerTest
@@ -10,7 +9,8 @@ namespace ProjEulerTest
         [TestMethod]
         public void Problem001Test()
         {
-            ProjEuler.ProjEuler.Problem001();
+            Assert.AreEqual(23, ProjEuler.ProjEuler.Problem001(10));
+            Assert.AreEqual(233168, ProjEuler.ProjEuler.Problem001(1000));
         }
     }
 }

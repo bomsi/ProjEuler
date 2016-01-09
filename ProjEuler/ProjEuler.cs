@@ -42,5 +42,25 @@ namespace ProjEuler
             }
             return sum;
         }
+
+        public static long Problem003(long number)
+        {
+            const int estimatedSize = 7000;
+            var primes = Util.Eratosthenes(estimatedSize);
+            var factors = new List<int>();
+            foreach (var prime in primes)
+            {
+                while (number % prime == 0)
+                {
+                    number /= prime;
+                    factors.Add(prime);
+                }
+            }
+            if (number != 1)
+                throw new Exception("Wrong buffer estimate. Buffer to small.");
+            return factors[factors.Count - 1];
+        }
+
+
     }
 }

@@ -61,6 +61,26 @@ namespace ProjEuler
             return factors[factors.Count - 1];
         }
 
-
+        public static int Problem004(int digits)
+        {
+            // TODO: optimize this brute force aproach
+            int tmp;
+            int largest = 0;
+            int upperLimit = (int)Math.Pow(10, digits) - 1;
+            int lowerLimit = (int)Math.Pow(10, digits - 1) - 1;
+            for (int i = upperLimit; i > lowerLimit; --i)
+            {
+                for (int j = upperLimit; j > lowerLimit; --j)
+                {
+                    tmp = i * j;
+                    if (Util.Reverse(tmp.ToString()) == tmp.ToString())
+                    {
+                        if (tmp > largest)
+                            largest = tmp;
+                    }
+                }
+            }
+            return largest;
+        }
     }
 }

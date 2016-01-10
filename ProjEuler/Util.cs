@@ -8,6 +8,12 @@ namespace ProjEuler
 {
     class Util
     {
+        /// <summary>
+        /// Return a list of prime numbers
+        /// </summary>
+        /// <param name="limit">Largest number to test</param>
+        /// <param name="smallest">Smallest prime to include in the list</param>
+        /// <returns>A list of prime numbers</returns>
         public static List<int> Eratosthenes(int limit, int smallest = 2)
         {
             bool[] mark = new bool[limit + 1];
@@ -31,6 +37,18 @@ namespace ProjEuler
                     result.Add(i);
             }
             return result;
+        }
+
+        /// <summary>
+        /// Reverses a string
+        /// </summary>
+        /// <param name="str">String to reverse</param>
+        /// <returns>The reversed string</returns>
+        public static string Reverse(string str)
+        {
+            char[] charArray = str.ToCharArray();
+            Array.Reverse(charArray);
+            return new string(charArray);
         }
     }
 }

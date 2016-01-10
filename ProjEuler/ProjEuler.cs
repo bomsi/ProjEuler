@@ -63,7 +63,7 @@ namespace ProjEuler
 
         public static int Problem004(int digits)
         {
-            // TODO: optimize this brute force aproach
+            // TODO: optimize this brute force approach
             int tmp;
             int largest = 0;
             int upperLimit = (int)Math.Pow(10, digits) - 1;
@@ -81,6 +81,32 @@ namespace ProjEuler
                 }
             }
             return largest;
+        }
+
+        public static int Problem005(int from, int to)
+        {
+            // TODO: optimize this brute force approach
+            if (from == 1)
+                from = 2;
+            Func<int, bool> condition = (number) =>
+            {
+                for (int i = from; i <= to; ++i)
+                {
+                    if (number % i != 0)
+                        return false;
+                }
+                return true;
+            };
+            int result = 0;
+            for (int i = to; ; ++i)
+            {
+                if (condition(i))
+                {
+                    result = i;
+                    break;
+                }
+            }
+            return result;
         }
     }
 }

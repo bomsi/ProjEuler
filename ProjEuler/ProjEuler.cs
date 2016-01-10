@@ -120,5 +120,15 @@ namespace ProjEuler
             }
             return (sqrSum * sqrSum) - sumSqr;
         }
+
+        public static int Problem007(int primeIndex)
+        {
+            var primes = new List<int>();
+            for (int estimate = primeIndex * 11; primes.Count < primeIndex; estimate *= 11)
+            {
+                primes = Util.Eratosthenes(estimate);
+            }
+            return primes[primeIndex - 1];
+        }
     }
 }

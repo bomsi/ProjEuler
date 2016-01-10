@@ -108,5 +108,17 @@ namespace ProjEuler
             }
             return result;
         }
+
+        public static int Problem006(int limit)
+        {
+            int sumSqr = 0;
+            int sqrSum = 0;
+            for (int i = 1; i <= limit; ++i)
+            {
+                sumSqr += i * i;
+                sqrSum += i;
+            }
+            return (sqrSum * sqrSum) - sumSqr;
+        }
     }
 }

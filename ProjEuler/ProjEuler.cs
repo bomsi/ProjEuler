@@ -171,5 +171,18 @@ namespace ProjEuler
             }
             return greatestProduct;
         }
+
+        public static int Problem009()
+        {
+            // TODO: optimize this brute force approach
+            const int estimated = 500;
+            for (int i = 1; i < estimated; ++i)
+                for (int j = i + 1; j < estimated; ++j)
+                    for (int k = j + 1; k < estimated; ++k)
+                        if (i + j + k == 1000)
+                            if (((i * i) + (j * j)) == (k * k))
+                                return i * j * k;
+            return 0;
+        }
     }
 }

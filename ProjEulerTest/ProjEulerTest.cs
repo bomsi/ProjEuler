@@ -68,5 +68,12 @@ namespace ProjEulerTest
         {
             Assert.AreEqual(31875000, ProjEuler.ProjEuler.Problem009());
         }
+
+        [TestMethod]
+        public void Problem010Test()
+        {
+            Assert.AreEqual(17, ProjEuler.ProjEuler.Problem010(10));
+            Assert.AreEqual(142913828922, ProjEuler.ProjEuler.Problem010(2000000));
+        }
     }
 }

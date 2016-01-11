@@ -184,5 +184,16 @@ namespace ProjEuler
                                 return i * j * k;
             return 0;
         }
+
+        public static long Problem010(int limit)
+        {
+            var primes = Util.Eratosthenes(limit);
+            long sum = 0;
+            foreach (var prime in primes)
+            {
+                sum += prime;
+            }
+            return sum;
+        }
     }
 }

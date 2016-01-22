@@ -160,6 +160,7 @@ namespace ProjEuler
             long greatestProduct = 0;
             long product = 1;
             string tmp;
+            int t;
             for (int i = 0; i < number.Length - adjacentDigits; ++i, product = 1)
             {
                 tmp = number.Substring(i, adjacentDigits);
@@ -167,7 +168,9 @@ namespace ProjEuler
                     continue;
                 for (int j = 0; j < tmp.Length; ++j)
                 {
-                    product *= int.Parse(tmp.Substring(j, 1), System.Globalization.NumberStyles.Integer);
+                    if(int.TryParse(tmp.Substring(j, 1), out t) == false)
+                        throw new Exception(tmp.Substring(j, 1));
+                    product *= t;
                 }
                 if (product > greatestProduct)
                     greatestProduct = product;

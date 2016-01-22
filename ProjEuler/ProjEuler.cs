@@ -160,18 +160,13 @@ namespace ProjEuler
             long greatestProduct = 0;
             long product = 1;
             string tmp;
-            int t;
             for (int i = 0; i < number.Length - adjacentDigits; ++i, product = 1)
             {
                 tmp = number.Substring(i, adjacentDigits);
                 if (tmp.Contains("0"))
                     continue;
                 for (int j = 0; j < tmp.Length; ++j)
-                {
-                    if (int.TryParse(tmp.Substring(j, 1), out t) == false)
-                        throw new Exception(string.Format("[{0}, {1}]", tmp.Substring(j, 1), Convert.ToInt32(tmp.Substring(j, 1)[0])));
-                    product *= t;
-                }
+                    product *= int.Parse(tmp.Substring(j, 1));
                 if (product > greatestProduct)
                     greatestProduct = product;
             }

@@ -168,8 +168,8 @@ namespace ProjEuler
                     continue;
                 for (int j = 0; j < tmp.Length; ++j)
                 {
-                    if(int.TryParse(tmp.Substring(j, 1), out t) == false)
-                        throw new Exception(string.Format("[{0}]", tmp.Substring(j, 1)));
+                    if (int.TryParse(tmp.Substring(j, 1), out t) == false)
+                        break;
                     product *= t;
                 }
                 if (product > greatestProduct)

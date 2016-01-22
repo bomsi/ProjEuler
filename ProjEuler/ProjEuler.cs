@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace ProjEuler
@@ -157,8 +156,7 @@ namespace ProjEuler
 
         public static long Problem008(int adjacentDigits)
         {
-            string number = _problem008String.Replace("\r\n", "").Replace(" ", "").Trim();
-            Regex.Replace(number, @"\s+", "");
+            string number = _problem008String.Replace("\r\n", "").Replace(" ", "").Replace("\n", "");
             long greatestProduct = 0;
             long product = 1;
             string tmp;

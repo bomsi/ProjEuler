@@ -156,7 +156,7 @@ namespace ProjEuler
 
         public static long Problem008(int adjacentDigits)
         {
-            string number = _problem008String.Replace("\r\n", "").Replace(" ", "");
+            string number = _problem008String.Replace("\r\n", "").Replace(" ", "").Trim();
             long greatestProduct = 0;
             long product = 1;
             string tmp;
@@ -169,7 +169,7 @@ namespace ProjEuler
                 for (int j = 0; j < tmp.Length; ++j)
                 {
                     if(int.TryParse(tmp.Substring(j, 1), out t) == false)
-                        throw new Exception(tmp.Substring(j, 1));
+                        throw new Exception(string.Format("[{0}]", tmp.Substring(j, 1)));
                     product *= t;
                 }
                 if (product > greatestProduct)

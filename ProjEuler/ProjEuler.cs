@@ -166,7 +166,9 @@ namespace ProjEuler
                 if (tmp.Contains("0"))
                     continue;
                 for (int j = 0; j < tmp.Length; ++j)
-                    product *= int.Parse(tmp.Substring(j, 1));
+                {
+                    product *= int.Parse(tmp.Substring(j, 1), System.Globalization.NumberStyles.Integer);
+                }
                 if (product > greatestProduct)
                     greatestProduct = product;
             }

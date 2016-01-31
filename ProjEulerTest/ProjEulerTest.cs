@@ -7,6 +7,7 @@ namespace ProjEulerTest
     public class ProjEulerTest
     {
         [TestMethod]
+        [Timeout(60000)]
         public void Problem001Test()
         {
             Assert.AreEqual(23, ProjEuler.ProjEuler.Problem001(10));
@@ -14,6 +15,7 @@ namespace ProjEulerTest
         }
 
         [TestMethod]
+        [Timeout(60000)]
         public void Problem002Test()
         {
             Assert.AreEqual(10, ProjEuler.ProjEuler.Problem002(13));
@@ -22,6 +24,7 @@ namespace ProjEulerTest
         }
 
         [TestMethod]
+        [Timeout(60000)]
         public void Problem003Test()
         {
             Assert.AreEqual(29, ProjEuler.ProjEuler.Problem003(13195));
@@ -29,6 +32,7 @@ namespace ProjEulerTest
         }
 
         [TestMethod]
+        [Timeout(60000)]
         public void Problem004Test()
         {
             Assert.AreEqual(9009, ProjEuler.ProjEuler.Problem004(2));
@@ -36,6 +40,7 @@ namespace ProjEulerTest
         }
 
         [TestMethod]
+        [Timeout(60000)]
         public void Problem005Test()
         {
             Assert.AreEqual(2520, ProjEuler.ProjEuler.Problem005(1, 10));
@@ -43,6 +48,7 @@ namespace ProjEulerTest
         }
 
         [TestMethod]
+        [Timeout(60000)]
         public void Problem006Test()
         {
             Assert.AreEqual(2640, ProjEuler.ProjEuler.Problem006(10));
@@ -50,6 +56,7 @@ namespace ProjEulerTest
         }
 
         [TestMethod]
+        [Timeout(60000)]
         public void Problem007Test()
         {
             Assert.AreEqual(13, ProjEuler.ProjEuler.Problem007(6));
@@ -57,6 +64,7 @@ namespace ProjEulerTest
         }
 
         [TestMethod]
+        [Timeout(60000)]
         public void Problem008Test()
         {
             Assert.AreEqual(5832, ProjEuler.ProjEuler.Problem008(4));
@@ -64,12 +72,14 @@ namespace ProjEulerTest
         }
 
         [TestMethod]
+        [Timeout(60000)]
         public void Problem009Test()
         {
             Assert.AreEqual(31875000, ProjEuler.ProjEuler.Problem009());
         }
 
         [TestMethod]
+        [Timeout(60000)]
         public void Problem010Test()
         {
             Assert.AreEqual(17, ProjEuler.ProjEuler.Problem010(10));
@@ -77,9 +87,17 @@ namespace ProjEulerTest
         }
 
         [TestMethod]
+        [Timeout(60000)]
         public void Problem011Test()
         {
             Assert.AreEqual(70600674, ProjEuler.ProjEuler.Problem011(4));
+        }
+
+        [TestMethod]
+        [Timeout(60000)]
+        public void Problem012Test()
+        {
+            Assert.AreEqual(76576500, ProjEuler.ProjEuler.Problem012(4));
         }
     }
 }

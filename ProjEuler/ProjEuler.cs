@@ -9,6 +9,9 @@ namespace ProjEuler
 {
     public class ProjEuler
     {
+        /// <summary>
+        /// Problem statement: https://projecteuler.net/problem=1
+        /// </summary>
         public static int Problem001(int limit)
         {
             int sum = 0;
@@ -18,6 +21,9 @@ namespace ProjEuler
             return sum;
         }
 
+        /// <summary>
+        /// Problem statement: https://projecteuler.net/problem=2
+        /// </summary>
         public static int Problem002(int limit)
         {
             // prepare fibonacci sequence
@@ -44,6 +50,9 @@ namespace ProjEuler
             return sum;
         }
 
+        /// <summary>
+        /// Problem statement: https://projecteuler.net/problem=3
+        /// </summary>
         public static long Problem003(long number)
         {
             const int estimatedSize = 7000;
@@ -62,6 +71,9 @@ namespace ProjEuler
             return factors[factors.Count - 1];
         }
 
+        /// <summary>
+        /// Problem statement: https://projecteuler.net/problem=4
+        /// </summary>
         public static int Problem004(int digits)
         {
             // TODO: optimize this brute force approach
@@ -84,6 +96,9 @@ namespace ProjEuler
             return largest;
         }
 
+        /// <summary>
+        /// Problem statement: https://projecteuler.net/problem=5
+        /// </summary>
         public static int Problem005(int from, int to)
         {
             // TODO: optimize this brute force approach
@@ -110,6 +125,9 @@ namespace ProjEuler
             return result;
         }
 
+        /// <summary>
+        /// Problem statement: https://projecteuler.net/problem=6
+        /// </summary>
         public static int Problem006(int limit)
         {
             int sumSqr = 0;
@@ -122,6 +140,9 @@ namespace ProjEuler
             return (sqrSum * sqrSum) - sumSqr;
         }
 
+        /// <summary>
+        /// Problem statement: https://projecteuler.net/problem=7
+        /// </summary>
         public static int Problem007(int primeIndex)
         {
             var primes = new List<int>();
@@ -154,6 +175,9 @@ namespace ProjEuler
             05886116467109405077541002256983155200055935729725
             71636269561882670428252483600823257530420752963450";
 
+        /// <summary>
+        /// Problem statement: https://projecteuler.net/problem=8
+        /// </summary>
         public static long Problem008(int adjacentDigits)
         {
             string number = _problem008String.Replace("\r\n", "").Replace(" ", "").Replace("\n", "");
@@ -173,6 +197,9 @@ namespace ProjEuler
             return greatestProduct;
         }
 
+        /// <summary>
+        /// Problem statement: https://projecteuler.net/problem=9
+        /// </summary>
         public static int Problem009()
         {
             // TODO: optimize this brute force approach
@@ -186,6 +213,9 @@ namespace ProjEuler
             return 0;
         }
 
+        /// <summary>
+        /// Problem statement: https://projecteuler.net/problem=10
+        /// </summary>
         public static long Problem010(int limit)
         {
             var primes = Util.Eratosthenes(limit);
@@ -219,6 +249,9 @@ namespace ProjEuler
             20 73 35 29 78 31 90 01 74 31 49 71 48 86 81 16 23 57 05 54
             01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48";
 
+        /// <summary>
+        /// Problem statement: https://projecteuler.net/problem=11
+        /// </summary>
         public static long Problem011(int adjacent)
         {
             const int limit = 20;
@@ -287,6 +320,26 @@ namespace ProjEuler
             }
 
             return greatestProduct;
+        }
+
+        /// <summary>
+        /// Problem statement: https://projecteuler.net/problem=12
+        /// </summary>
+        public static int Problem012(int divisors)
+        {
+            const int estimated = 13000;
+            int current;
+            var primes = Util.Eratosthenes(estimated);
+            for (int n = 1; n <= estimated; ++n)
+            {
+                current = 0;
+                for (int i = 1; i <= n; ++i)
+                    current += i;
+                // TODO optimize by removing unnecessary copying
+                if (Util.Factors(current, primes).Count > 500)
+                    return current;
+            }
+            return 0;
         }
     }
 }

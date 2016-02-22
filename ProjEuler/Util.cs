@@ -83,7 +83,7 @@ namespace ProjEuler
         /// <param name="number">Number to factor</param>
         /// <param name="primes">List of primes to use</param>
         /// <returns>Set of factors</returns>
-        public static HashSet<T>Factors<T>(T number, List<T> primes) where T: struct, IComparable, IComparable<T>, IEquatable<T>, IConvertible
+        public static HashSet<T> Factors<T>(T number, List<T> primes) where T: struct, IComparable, IComparable<T>, IEquatable<T>, IConvertible
         {
             var powerSetOfPrimeFactors = PowerSet(PrimeFactors(number, primes).Select((x, y) => new { x, y }).ToList());
             var factors = new HashSet<T>();

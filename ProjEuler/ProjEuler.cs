@@ -450,12 +450,37 @@ namespace ProjEuler
         /// </summary>
         public static long Problem013()
         {
-            BigInteger sum = new BigInteger(0);
-            StringReader reader = new StringReader(_problem013String.Replace(" ", "").Trim());
+            var sum = new BigInteger(0);
+            var reader = new StringReader(_problem013String.Replace(" ", "").Trim());
             string line = null;
             while((line = reader.ReadLine()) != null)
                 sum += BigInteger.Parse(line);
             return long.Parse(sum.ToString().Substring(0, 10));
+        }
+
+        /// <summary>
+        /// Problem statement: https://projecteuler.net/problem=14
+        /// </summary>
+        public static long Problem014()
+        {
+            long n;
+            long count;
+            var dict = new Dictionary<long, long>(1000000);
+            for (long i = 2; i < 1000000; ++i)
+            {
+                n = i;
+                count = 0;
+                while (n != 1)
+                {
+                    if ((n & 1L) == 0)
+                        n = n / 2;
+                    else
+                        n = (3 * n) + 1;
+                    ++count;
+                }
+                dict[i] = count;
+            }
+            return dict.Aggregate((left, right) => left.Value > right.Value ? left : right).Key;
         }
     }
 }
